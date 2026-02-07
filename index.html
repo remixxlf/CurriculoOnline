@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" type="image/x-icon" href="/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon" href="/favicon-32x32.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
@@ -27,12 +27,15 @@
       >
       <a
         href="#"
-        data-texto="Filipe <br> Estudante de Sistemas de Informaçao <br> apaixonado por tecnologia "
+        data-texto="Nascido em feira de santana,bahia  <br> acredito que ha muito mais no web design <br>"
         >Sobre</a
       >
-      <div>
-        <button class="Button-contato">Contato</button>
-      </div>
+      <a
+        href="#"
+        data-texto=" Senai <br> Desenvolvimento De Sistemas <br> <br> UNEX  Centro Universitario De Excelencia <br> Sistemas De Informaçao "
+        >Formação</a
+      >
+      <button class="Button-contato">Contato</button>
     </nav>
 
     <div class="canto-baixo-direita">
@@ -48,11 +51,15 @@
       links.forEach((link) => {
         link.addEventListener("click", function (event) {
           if (link.classList.contains("Button-contato")) {
-            localDoTexto.innerHTML =
-              ' <a href="https://www.linkedin.com/in/luis-filipe-silva-54ab63254/" target="_blank" style=" text-decoration: none; color=black; ">linkedin</a> <br><a href="https://github.com/remixxlf?tab=repositories" target="_blank" style=" text-decoration: none; color=black; ">GitHub</a>';
+            localDoTexto.innerHTML = `
+              <a href="https://www.linkedin.com/in/luis-filipe-silva-54ab63254/" target="_blank" style="text-decoration: none; color: black; font-weight: bold;">
+                LinkedIn
+              </a>
+              <br>
+              <span>luisfilipeslima@gmail.com</span>
+            `;
           } else {
             const novoTexto = link.getAttribute("data-texto");
-
             if (novoTexto) {
               localDoTexto.innerHTML = novoTexto;
             }
