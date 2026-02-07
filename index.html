@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Site Minimalista</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="noise"></div>
+
+    <div class="canto-topo-esquerda">
+      <h1>Luis Filipe</h1>
+      <p>Desenvolvedor</p>
+    </div>
+
+    <nav class="menu-lateral">
+      <a href="https://github.com/remixxlf?tab=repositories" target="_blank"
+        >Projetos</a
+      >
+      <a
+        href="#"
+        data-texto="Filipe <br> Estudante de Sistemas de Informaçao <br> apaixonado por tecnologia "
+        >Sobre</a
+      >
+      <div>
+        <button class="Button-contato">Contato</button>
+      </div>
+    </nav>
+
+    <div class="canto-baixo-direita">
+      <p id="texto-troca"></p>
+    </div>
+
+    <script>
+      const links = document.querySelectorAll(
+        ".menu-lateral a, .Button-contato",
+      );
+      const localDoTexto = document.getElementById("texto-troca");
+
+      links.forEach((link) => {
+        link.addEventListener("click", function (event) {
+          if (link.classList.contains("Button-contato")) {
+            localDoTexto.innerHTML =
+              ' <a href="https://www.linkedin.com/in/luis-filipe-silva-54ab63254/" target="_blank" style=" text-decoration: none; color=black; ">linkedin</a> <br><a href="https://github.com/remixxlf?tab=repositories" target="_blank" style=" text-decoration: none; color=black; ">GitHub</a>';
+          } else {
+            const novoTexto = link.getAttribute("data-texto");
+
+            if (novoTexto) {
+              localDoTexto.innerHTML = novoTexto;
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
